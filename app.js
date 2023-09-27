@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const xss = require('xss-clean')
+// const xss = require('xss-clean');
 dotenv.config();
 const app = express();
 const Drug = require('./models/Drugs');
@@ -9,7 +9,7 @@ const User = require('./models/User');
 const mongoose = require('mongoose');
 
 app.use(cors())
-app.use(xss())
+// app.use(xss())
 app.use(express.json())
 
 const databaseURI = process.env.MONGO_URI;
