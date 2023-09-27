@@ -30,7 +30,7 @@ async function connectDB() {
 connectDB();
 
 //Route to get post or register Drugs
-app.post('/api/v1/add_drugs', async (req, res) => {
+app.post('/api/v1/addDrugs', async (req, res) => {
     const { name, type, price, uses, quantity } = req.body;
 
     try {
