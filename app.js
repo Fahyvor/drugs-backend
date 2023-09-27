@@ -75,6 +75,17 @@ app.post('/api/v1/login', async (req, res) => {
     }
 })
 
+app.get('/api/v1/user', async (req, res) => {
+    try {
+     const allUsers = await User({})
+    res.json(allUsers);   
+    } catch (error) {
+    console.error('Error in fetching Users', error)
+    res.status(500).json({ error: 'Internal Server error'})
+    }
+    
+})
+
 port = process.env.PORT || 3030
 
 app.listen(port, () => {
